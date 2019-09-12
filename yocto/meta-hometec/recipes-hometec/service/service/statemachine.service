@@ -3,7 +3,7 @@ Description=Example systemd service.
 
 [Service]
 Type=simple
-ExecStart=statemachine
+ExecStart=/bin/bash /usr/bin/statemachine.sh
 
 [Install]
 WantedBy=multi-user.target
