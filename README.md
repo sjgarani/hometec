@@ -12,6 +12,11 @@ Git:
     git clone -b thud git://git.yoctoproject.org/meta-raspberrypi yocto/meta-raspberrypi
     git clone -b thud https://github.com/meta-qt5/meta-qt5.git yocto/meta-qt5
 
+Create Layer:
+    cd $WORKSPACE
+    bitbake-layers create-layer meta-hometec
+    bitbake-layers add-layer /workspaces/hometec/meta-hometec
+
 Yocto:
     source oe-init-build-env
     bitbake core-image-base

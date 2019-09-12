@@ -1,0 +1,9 @@
+[Unit]
+Description=Hometec systemd service.
+
+[Service]
+Type=simple
+ExecStart=/bin/sh /usr/bin/statemachine.sh
+
+[Install]
+WantedBy=multi-user.target
