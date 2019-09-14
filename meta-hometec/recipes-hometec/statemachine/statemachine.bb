@@ -17,6 +17,6 @@ inherit pkgconfig cmake
 EXTRA_OECMAKE = ""
 
 do_install() {
-    install -d ${D}${bindir}
-    install -m 0755 statemachine ${D}${bindir}
+    install -d ${D}${libexecdir}
+    install -m 0755 statemachine ${D}${libexecdir}
 }

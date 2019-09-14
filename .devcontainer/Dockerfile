@@ -44,6 +44,9 @@ RUN locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
+# Extra instalation
+RUN apt-get -y install clang-format
+
 # Perform the Yocto build as user cuteradio (not as root).
 # NOTE: The USER command does not set the environment variable HOME.
 

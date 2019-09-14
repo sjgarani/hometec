@@ -1,73 +1,127 @@
-#include <boost/mpl/list.hpp>
-#include <boost/statechart/custom_reaction.hpp>
-#include <boost/statechart/event.hpp>
-#include <boost/statechart/simple_state.hpp>
-#include <boost/statechart/state.hpp>
-#include <boost/statechart/state_machine.hpp>
-#include <boost/statechart/transition.hpp>
-#include <iostream>
+#include <errno.h>
+#include <fcntl.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <syslog.h>
+#include <unistd.h>
 
-#define BUTTON 0
-#define LIGHT 1
+#define DAEMON_NAME "hometec"
 
-using namespace std;
+void daemon_shutdown();
+void signal_handler(int sig);
+void daemonize(const char *rundir, const char *pidfile);
 
-namespace sc = boost::statechart;
-namespace mpl = boost::mpl;
+bool exit_daemon = false;
+int pid_file_handle;
 
-struct EvPressButton : sc::event<EvPressButton> {};
-struct EvReleaseButton : sc::event<EvReleaseButton> {};
-struct EvToggle : sc::event<EvToggle> {};
-
-// *** ST
-
-struct Active;
-struct Module : sc::state_machine<Module, Active> {};
-
-struct ButtonPressed;
-struct ButtonReleased;
-struct LightOn;
-struct LightOff;
-struct Active : sc::simple_state<Active, Module,
-                                 mpl::list<ButtonReleased, LightOff> > {
-  Active() { cout << "Active" << endl; }
-};
-
-// *** Pins
-
-struct ButtonPressed
-    : sc::state<ButtonPressed, Active::orthogonal<BUTTON> > {
-  ButtonPressed(my_context ctx) : my_base( ctx ) {
-    cout << "ButtonPressed" << endl;
-    post_event(EvToggle());
+void signal_handler(int sig) {
+  switch (sig) {
+  case SIGINT:
+  case SIGTERM:
+    exit_daemon = true;
+    break;
   }
-  typedef mpl::list< sc::transition<EvReleaseButton, ButtonReleased> > reactions;
-};
+}
 
-struct ButtonReleased
-    : sc::simple_state<ButtonReleased, Active::orthogonal<BUTTON> > {
-  ButtonReleased() { cout << "ButtonReleased" << endl; }
-  typedef mpl::list< sc::transition<EvPressButton, ButtonPressed> > reactions;
-};
+void daemon_shutdown() {
+  syslog(LOG_INFO, "Hometec daemon exiting...");
+  close(pid_file_handle);
+}
 
-struct LightOn
-    : sc::state<LightOn, Active::orthogonal<LIGHT> > {
-  LightOn(my_context ctx) : my_base( ctx ) { cout << "* LightOn *" << endl; }
-  typedef mpl::list< sc::transition<EvToggle, LightOff> > reactions;
-};
+void daemonize(const char *rundir, const char *pidfile) {
+  int pid, sid, i;
+  char str[10];
+  struct sigaction sig_action;
+  sigset_t sig_set;
 
-struct LightOff
-    : sc::state<LightOff, Active::orthogonal<LIGHT> > {
-  LightOff(my_context ctx) : my_base( ctx ) { cout << "* LightOff *" << endl; }
-  typedef mpl::list< sc::transition<EvToggle, LightOn> > reactions;
-};
+  if (getppid() == 1) {
+    return;
+  }
+
+  /* Set signal mask - signals we want to block */
+  sigemptyset(&sig_set);
+  sigaddset(&sig_set, SIGCHLD);
+  sigaddset(&sig_set, SIGTSTP);
+  sigaddset(&sig_set, SIGTTOU);
+  sigaddset(&sig_set, SIGTTIN);
+  sigprocmask(SIG_BLOCK, &sig_set, NULL);
+
+  sig_action.sa_handler = signal_handler;
+  sigemptyset(&sig_action.sa_mask);
+  sig_action.sa_flags = 0;
+
+  sigaction(SIGHUP, &sig_action, NULL);
+  sigaction(SIGTERM, &sig_action, NULL);
+  sigaction(SIGINT, &sig_action, NULL);
+
+  pid = fork();
+  if (pid < 0) {
+    exit(EXIT_FAILURE);
+  }
+
+  if (pid > 0) {
+    exit(EXIT_SUCCESS);
+  }
+
+  umask(027); /* Set file permissions 750 */
+
+  sid = setsid();
+  if (sid < 0) {
+    exit(EXIT_FAILURE);
+  }
+
+  for (i = getdtablesize(); i >= 0; --i) {
+    close(i);
+  }
+
+  /* Route I/O connections */
+  i = open("/dev/null", O_RDWR);
+
+  dup(i);
+
+  dup(i);
+
+  chdir(rundir);
+
+  /* Ensure only one copy */
+  pid_file_handle = open(pidfile, O_RDWR | O_CREAT, 0600);
+
+  if (pid_file_handle == -1) {
+    syslog(LOG_INFO, "Could not open PID lock file %s, exiting!", pidfile);
+    exit(EXIT_FAILURE);
+  }
+
+  /* Try to lock file */
+  if (lockf(pid_file_handle, F_TLOCK, 0) == -1) {
+    syslog(LOG_INFO, "Could not lock PID lock file %s, exiting!", pidfile);
+    exit(EXIT_FAILURE);
+  }
+
+  /* Get and format PID */
+  sprintf(str, "%d\n", getpid());
+
+  /* write pid to lockfile */
+  write(pid_file_handle, str, strlen(str));
+}
 
 int main() {
-  Module sw;
-  sw.initiate();
-  sw.process_event(EvPressButton());
-  sw.process_event(EvReleaseButton());
-  sw.process_event(EvPressButton());
-  sw.process_event(EvReleaseButton());
-  return 0;
+
+  setlogmask(LOG_UPTO(LOG_INFO));
+  openlog(DAEMON_NAME, LOG_CONS | LOG_PERROR, LOG_USER);
+
+  syslog(LOG_INFO, "Hometec daemon starting up...");
+
+  const char *daemonpid = "/var/run/hometec.pid";
+  const char *daemonpath = "/";
+  daemonize(daemonpath, daemonpid);
+
+  syslog(LOG_INFO, "Hometec daemon running...");
+
+  while (!exit_daemon) {
+    sleep(10);
+  }
 }
