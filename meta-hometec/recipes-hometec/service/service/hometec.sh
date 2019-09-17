@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/usr/libexec/statemachine
+/usr/libexec/hometec

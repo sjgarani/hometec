@@ -8,6 +8,8 @@ DEPENDS += "boost"
 SRC_URI = "\
             file://CMakeLists.txt \
             file://main.cpp \
+            file://src/statemachine.cpp \
+            file://include/statemachine.hpp \
         "
 
 S = "${WORKDIR}"
@@ -18,5 +20,5 @@ EXTRA_OECMAKE = ""
 
 do_install() {
     install -d ${D}${libexecdir}
-    install -m 0755 statemachine ${D}${libexecdir}
+    install -m 0755 hometec ${D}${libexecdir}
 }

@@ -8,6 +8,7 @@
 #include <sys/types.h>
 #include <syslog.h>
 #include <unistd.h>
+#include "statemachine.hpp"
 
 #define DAEMON_NAME "hometec"
 
@@ -120,6 +121,9 @@ int main() {
   daemonize(daemonpath, daemonpid);
 
   syslog(LOG_INFO, "Hometec daemon running...");
+
+  Module sw;
+  sw.initiate();
 
   while (!exit_daemon) {
     sleep(10);

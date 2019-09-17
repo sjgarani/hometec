@@ -20,7 +20,6 @@ struct EvReleaseButton : sc::event<EvReleaseButton> {};
 struct EvToggle : sc::event<EvToggle> {};
 
 // *** ST
-
 struct Active;
 struct Module : sc::state_machine<Module, Active> {};
 
@@ -30,44 +29,31 @@ struct LightOn;
 struct LightOff;
 struct Active : sc::simple_state<Active, Module,
                                  mpl::list<ButtonReleased, LightOff> > {
-  Active() { cout << "Active" << endl; }
+  Active();
 };
 
 // *** Pins
 
 struct ButtonPressed
     : sc::state<ButtonPressed, Active::orthogonal<BUTTON> > {
-  ButtonPressed(my_context ctx) : my_base( ctx ) {
-    cout << "ButtonPressed" << endl;
-    post_event(EvToggle());
-  }
+  ButtonPressed(my_context ctx);
   typedef mpl::list< sc::transition<EvReleaseButton, ButtonReleased> > reactions;
 };
 
 struct ButtonReleased
     : sc::simple_state<ButtonReleased, Active::orthogonal<BUTTON> > {
-  ButtonReleased() { cout << "ButtonReleased" << endl; }
+  ButtonReleased();
   typedef mpl::list< sc::transition<EvPressButton, ButtonPressed> > reactions;
 };
 
 struct LightOn
     : sc::state<LightOn, Active::orthogonal<LIGHT> > {
-  LightOn(my_context ctx) : my_base( ctx ) { cout << "* LightOn *" << endl; }
+  LightOn(my_context ctx);
   typedef mpl::list< sc::transition<EvToggle, LightOff> > reactions;
 };
 
 struct LightOff
     : sc::state<LightOff, Active::orthogonal<LIGHT> > {
-  LightOff(my_context ctx) : my_base( ctx ) { cout << "* LightOff *" << endl; }
+  LightOff(my_context ctx);
   typedef mpl::list< sc::transition<EvToggle, LightOn> > reactions;
 };
-
-int main() {
-  Module sw;
-  sw.initiate();
-  sw.process_event(EvPressButton());
-  sw.process_event(EvReleaseButton());
-  sw.process_event(EvPressButton());
-  sw.process_event(EvReleaseButton());
-  return 0;
-}
