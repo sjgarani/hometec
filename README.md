@@ -4,6 +4,7 @@ Install
 
 Artigo:
     https://www.embarcados.com.br/linux-para-a-raspberry-pi-3-usando-yocto/
+    https://github.com/jirihnidek/daemon
 
 Git:
     git clone -b thud http://git.yoctoproject.org/git/poky yocto

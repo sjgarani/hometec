@@ -1,3 +1,4 @@
+#include <syslog.h>
 #include <boost/mpl/list.hpp>
 #include <boost/statechart/custom_reaction.hpp>
 #include <boost/statechart/event.hpp>

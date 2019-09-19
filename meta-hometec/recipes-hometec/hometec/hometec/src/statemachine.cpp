@@ -1,24 +1,23 @@
 #include "statemachine.hpp"
-#include <iostream>
 
 #define BUTTON 0
 #define LIGHT 1
 
 using namespace std;
 
-Active::Active() { cout << "Active" << endl; }
+Active::Active() { syslog(LOG_INFO, "Hometec State Machine is actived."); }
 
 ButtonPressed::ButtonPressed(my_context ctx) : my_base(ctx) {
-  cout << "ButtonPressed" << endl;
+  syslog(LOG_INFO, "Button pressed");
   post_event(EvToggle());
 }
 
-ButtonReleased::ButtonReleased() { cout << "ButtonReleased" << endl; }
+ButtonReleased::ButtonReleased() { syslog(LOG_INFO, "Button released"); }
 
 LightOn::LightOn(my_context ctx) : my_base(ctx) {
-  cout << "* LightOn *" << endl;
+  syslog(LOG_INFO, "* LightOn *");
 }
 
 LightOff::LightOff(my_context ctx) : my_base(ctx) {
-  cout << "* LightOff *" << endl;
+  syslog(LOG_INFO, "* LightOff *");
 }
