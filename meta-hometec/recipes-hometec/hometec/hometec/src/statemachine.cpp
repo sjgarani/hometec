@@ -1,8 +1,5 @@
 #include "statemachine.hpp"
 
-#define BUTTON 0
-#define LIGHT 1
-
 using namespace std;
 
 Active::Active() { syslog(LOG_INFO, "Hometec State Machine is actived."); }
