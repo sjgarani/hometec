@@ -45,7 +45,7 @@ ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 # Extra instalation
-RUN apt-get -y install clang-format
+RUN apt-get -y install clang-format net-tools
 
 # Perform the Yocto build as user cuteradio (not as root).
 # NOTE: The USER command does not set the environment variable HOME.
