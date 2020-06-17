@@ -48,3 +48,9 @@ viwewer.make
 bin/
 *.csv
 build/
+
+# Local
+CPackConfig.cmake
+CPackSourceConfig.cmake
+DartConfiguration.tcl
+hometec
