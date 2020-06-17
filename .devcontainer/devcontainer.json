@@ -1,26 +1,27 @@
-// For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
-// https://github.com/microsoft/vscode-dev-containers/tree/master/containers/ubuntu-18.04-git
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.112.0/containers/cpp
 {
-	"name": "Ubuntu 18.04 & Git",
+	"name": "C++",
 	"dockerFile": "Dockerfile",
-	// The optional 'runArgs' property can be used to specify additional runtime arguments.
-	"runArgs": [
-		// Uncomment the line if you will use a ptrace-based debugger like C++, Go, and Rust.
-		// "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined",
+	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
 
-		// Uncomment the next line to use a non-root user. See https://aka.ms/vscode-remote/containers/non-root-user.
-		// "-u", "1000"
-	],
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
 
-	// Uncomment the next line if you want to publish any ports.
-	// "appPort": [],
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-vscode.cpptools"
+	]
 
-	// Uncomment the next line if you want to add in default container specific settings.json values
-	// "settings":  { "workbench.colorTheme": "Quiet Light" },
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
 
-	// Uncomment the next line to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "gcc -v",
 
-	// Add the IDs of any extensions you want installed in the array below.
-	"extensions": []
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode"
+
 }
