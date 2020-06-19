@@ -1,0 +1,19 @@
+#!/bin/sh
+# Usage: hometec.stop
+#
+PIPE_DIR=/tmp/stop/
+ERLANG_LOGDIR=/tmp/stop
+BINDIR=/usr/lib/erlang/erts-@ERLANG_ERTS_VER@/bin
+HOMETEC_NODE=hometec@`hostname`
+
+mkdir -p $ERLANG_LOGDIR
+
+run_cmd="$BINDIR/erl\
+        -boot $BINDIR/start\
+        -sname stop\
+        -setcookie hometec\
+        -eval 'pong=net_adm:ping(list_to_atom(\"$HOMETEC_NODE\")).'\
+        -eval 'rpc:call(list_to_atom(\"$HOMETEC_NODE\"), init, stop, []).'\
+        -s init stop"
+
+$BINDIR/run_erl -daemon $PIPE_DIR $ERLANG_LOGDIR "exec $run_cmd"

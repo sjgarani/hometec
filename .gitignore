@@ -1,56 +1,18 @@
-#gitignore
-# CMake generated files
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-
-# Other generated files and config files
-imgui.ini
-viwewer.make
-
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
+.eunit
 *.o
-*.obj
+*.beam
+*.plt
+ePrl_crash.dump
+.concrete/DEV_MODE
 
-# Precompiled Headers
-*.gch
-*.pch
+# rebar 2.x
+.rebar
+rel/example_project
+ebin/*.beam
+deps
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.out
-*.app
-
-*.exe
-*.sdf
-*.gitignore
-bin/
-*.csv
-build/
-
-# Local
-CPackConfig.cmake
-CPackSourceConfig.cmake
-DartConfiguration.tcl
-hometec
+# rebar 3
+.rebar3
+_build/
+_checkouts/
+rebar.lock
