@@ -1,6 +1,6 @@
 AC_PREREQ([2.68])
 AC_INIT([hometec], [0.1], [], [],
- [https://github.com/sjgarani/hometec-code.git])
+ [https://github.com/sjgarani/hometec.git])
 AM_INIT_AUTOMAKE([-Werror -Wno-override foreign])
 AM_SILENT_RULES([yes])
 
