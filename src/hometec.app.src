@@ -1,6 +1,6 @@
 {application, hometec,
  [{description, "An OTP application"},
-  {vsn, "0.1.0"},
+  {vsn, "&VSN&"},
   {registered, []},
   {mod, {hometec_app, []}},
   {applications,
