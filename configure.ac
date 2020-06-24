@@ -5,17 +5,12 @@ AM_INIT_AUTOMAKE([-Werror -Wno-override foreign])
 AM_SILENT_RULES([yes])
 
 AC_LANG([Erlang])
-AC_ERLANG_SUBST_LIB_DIR
-if test -z "${ERLANG_INSTALL_LIB_DIR}" ; then
-	ERLANG_INSTALL_LIB_DIR=$ERLANG_LIB_DIR
-fi
-AC_ERLANG_SUBST_ROOT_DIR
-AC_ERLANG_SUBST_INSTALL_LIB_DIR
 
 # Checks for programs.
 
 AC_PATH_PROG(SED, sed)
 
+AC_ERLANG_PATH_ERLC([erlc not found!], [${D}/${libdir}/erlang/bin])
 AC_ERLANG_NEED_ERLC
 AC_ERLANG_NEED_ERL
 AC_ERLANG_SUBST_ERTS_VER
