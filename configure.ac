@@ -10,7 +10,7 @@ AC_LANG([Erlang])
 
 AC_PATH_PROG(SED, sed)
 
-AC_ERLANG_PATH_ERLC([erlc not found!], [$libdir/erlang/bin])
+AC_ERLANG_PATH_ERLC([erlc not found!], [$NATIVE_BIN/erlang/bin])
 AC_ERLANG_NEED_ERLC
 AC_ERLANG_NEED_ERL
 AC_ERLANG_SUBST_ERTS_VER
