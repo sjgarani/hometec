@@ -7,8 +7,6 @@ AM_SILENT_RULES([yes])
 # Checks for programs.
 
 AC_PATH_PROG(SED, sed)
-AC_ERLANG_PATH_ERLC([erlc not found!], [/usr/bin])
-AC_ERLANG_PATH_ERL([erl not found!], [/usr/bin])
 
 AC_ERLANG_NEED_ERLC
 AC_ERLANG_NEED_ERL
