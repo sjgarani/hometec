@@ -4,8 +4,6 @@ AC_INIT([hometec], [0.1], [], [],
 AM_INIT_AUTOMAKE([-Werror -Wno-override foreign])
 AM_SILENT_RULES([yes])
 
-AC_LANG([Erlang])
-
 # Checks for programs.
 
 AC_PATH_PROG(SED, sed)
