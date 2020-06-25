@@ -30,6 +30,8 @@ fi
 AC_SUBST(HOMETEC_VSN)
 
 AC_CONFIG_FILES([Makefile
-                 src/Makefile])
+                 src/Makefile
+                 sys/Makefile
+                 sys/hometec.rel])
 
 AC_OUTPUT
