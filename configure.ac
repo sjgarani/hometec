@@ -8,8 +8,8 @@ AM_SILENT_RULES([yes])
 
 AC_PATH_PROG(SED, sed)
 
-AC_ERLANG_NEED_ERLC([/usr/bin])
-AC_ERLANG_NEED_ERL([/usr/bin])
+AC_ERLANG_NEED_ERLC
+AC_ERLANG_NEED_ERL
 AC_ERLANG_SUBST_ERTS_VER
 AC_ERLANG_CHECK_LIB([kernel],[],[])
 AC_ERLANG_CHECK_LIB([stdlib],[],[])
@@ -30,10 +30,6 @@ fi
 AC_SUBST(HOMETEC_VSN)
 
 AC_CONFIG_FILES([Makefile
-                 src/Makefile
-                 sys/Makefile
-                 sys/hometec.rel
-                 sys/hometec.start
-                 sys/hometec.stop])
+                 src/Makefile])
 
 AC_OUTPUT
