@@ -15,3 +15,5 @@ run_cmd="$BINDIR/erl\
         -setcookie hometec $@"
 
 $BINDIR/run_erl -daemon $PIPE_DIR $ERLANG_LOGDIR "exec $run_cmd"
+
+echo $! > /var/run/hometec.pid
