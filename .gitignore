@@ -54,3 +54,5 @@ CPackConfig.cmake
 CPackSourceConfig.cmake
 DartConfiguration.tcl
 hometec
+
+bitbake-cookerdaemon.log
