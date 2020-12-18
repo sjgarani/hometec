@@ -128,4 +128,6 @@ int main() {
   while (!exit_daemon) {
     sleep(10);
   }
+
+  syslog(LOG_INFO, "Hometec daemon exiting...");
 }
