@@ -55,3 +55,10 @@ CPackSourceConfig.cmake
 DartConfiguration.tcl
 
 bitbake-cookerdaemon.log
+
+.cache/
+.vscode/
+deploy/
+celix/
+*.zip
+*.so.1*

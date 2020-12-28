@@ -1,18 +1,20 @@
-cmake_minimum_required(VERSION 3.0.0)
-project(hometec VERSION 0.1.0)
+#${WS}/hometec/CMakeLists.txt
 
-include(CTest)
-enable_testing()
+cmake_minimum_required(VERSION 3.4)
+project(hometec CXX)
 
-find_package(Boost)
+SET(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
+SET(CMAKE_CXX_FLAGS_DEBUG "-g -DDEBUG")
 
-add_library(statemachine STATIC code/src/statemachine.cpp code/include/statemachine.hpp)
-target_include_directories(statemachine PUBLIC code/include)
+# set(CMAKE_MODULE_PATH  ${CMAKE_MODULE_PATH} "/usr/local/share/celix/cmake/modules")
+find_package(Celix REQUIRED)
 
-add_executable(hometec code/src/main.cpp)
-target_link_libraries(hometec PUBLIC statemachine)
+add_subdirectory(bundles/hometec_service)
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
-install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
+add_celix_container(hometec
+    CXX
+    BUNDLES
+        Celix::shell
+        Celix::shell_tui
+            hometec_service
+)
