@@ -5,7 +5,9 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 # DEPENDS += "boost"
 
-SRC_URI = "git://github.com/sjgarani/hometec.git;tag=0.1;protocol=git"
+SRCREV = "${AUTOREV}"
+
+SRC_URI = "git://github.com/sjgarani/hometec.git;branch=master;protocol=git"
 
 S = "${WORKDIR}/git"
 
