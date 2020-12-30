@@ -18,3 +18,7 @@
 	path = metas/meta-qt5
 	url = https://github.com/meta-qt5/meta-qt5.git
 	branch = thud
+[submodule "metas/meta-java"]
+	path = metas/meta-java
+	url = git://git.yoctoproject.org/meta-java
+	branch = thud
