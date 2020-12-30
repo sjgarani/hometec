@@ -18,3 +18,11 @@
 	path = metas/meta-qt5
 	url = https://github.com/meta-qt5/meta-qt5.git
 	branch = thud
+[submodule "metas/meta-virtualization"]
+	path = metas/meta-virtualization
+	url = git://git.yoctoproject.org/meta-virtualization
+	branch = thud
+[submodule "metas/meta-selinux"]
+	path = metas/meta-selinux
+	url = git://git.yoctoproject.org/meta-selinux
+	branch = thud
