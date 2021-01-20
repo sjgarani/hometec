@@ -12,9 +12,9 @@ ButtonPressed::ButtonPressed(my_context ctx) : my_base(ctx) {
 ButtonReleased::ButtonReleased() { syslog(LOG_INFO, "Button released"); }
 
 LightOn::LightOn(my_context ctx) : my_base(ctx) {
-  syslog(LOG_INFO, "* LightOn *");
+  syslog(LOG_INFO, "** LightOn **");
 }
 
 LightOff::LightOff(my_context ctx) : my_base(ctx) {
-  syslog(LOG_INFO, "* LightOff *");
+  syslog(LOG_INFO, "** LightOff **");
 }
