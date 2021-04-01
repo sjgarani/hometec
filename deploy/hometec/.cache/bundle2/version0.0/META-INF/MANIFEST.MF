@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: apache_celix_remote_shell
+Bundle-Group: Celix/Shell
+Bundle-Name: Apache Celix Remote Shell
+Bundle-Version: 0.0.2
+Bundle-Description: 
+Bundle-Activator: libremote_shell.so.0
+Private-Library: libremote_shell.so.0
+Import-Library: 
+Export-Library: 
+Created-By: 11.0.9.1 (AdoptOpenJDK)
+

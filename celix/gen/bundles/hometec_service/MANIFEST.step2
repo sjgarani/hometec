@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: hometec_service
+Bundle-Group: 
+Bundle-Name: hometec_service
+Bundle-Version: 1.0.0
+Bundle-Description: 
+Bundle-Activator: $<TARGET_SONAME_FILE_NAME:hometec_service>
+Private-Library: $<TARGET_SONAME_FILE_NAME:hometec_service>
+Import-Library: 
+Export-Library: 
+

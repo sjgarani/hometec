@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: hometec_service
+Bundle-Group: 
+Bundle-Name: hometec_service
+Bundle-Version: 1.0.0
+Bundle-Description: 
+Bundle-Activator: libhometec_service.so.1
+Private-Library: libhometec_service.so.1
+Import-Library: 
+Export-Library: 
+

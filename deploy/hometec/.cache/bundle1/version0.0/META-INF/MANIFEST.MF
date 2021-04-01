@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: apache_celix_shell
+Bundle-Group: Celix/Shell
+Bundle-Name: Apache Celix Shell
+Bundle-Version: 2.1.0
+Bundle-Description: 
+Bundle-Activator: libshell.so.2
+Private-Library: libshell.so.2
+Import-Library: 
+Export-Library: 
+Created-By: 11.0.9.1 (AdoptOpenJDK)
+

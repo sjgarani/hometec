@@ -1,0 +1,1000 @@
+  624  git add -u
+  625  git commit
+  626  git status
+  627  cd ..
+  628  cd test/poky/
+  629  ls
+  630  source oe-init-build-env
+  631  bitbake core-image-sato
+  632  df -h
+  633  git log
+  634  git log --decorate
+  635  ls
+  636  cd ..
+  637  code .
+  638  exit
+  639  ls
+  640  git clone https://github.com/intel-iot-devkit/meta-iot-cloud.git
+  641  ls
+  642  source oe-init-build-env
+  643  bitbake core-image-sato
+  644  cd ;;
+  645  cd ..
+  646  cd meta-iot-cloud/
+  647  git status
+  648  git checkout -b rocko origin/rocko
+  649  git log --decorate
+  650  cd ..
+  651  cd build/
+  652  bitbake core-image-sato
+  653  cd ..
+  654  git clone git://git.openembedded.org/openembedded-core
+  655  git clone git://git.openembedded.org/meta-openembedded
+  656  git clone git://git.yoctoproject.org/meta-java
+  657  git clone git://git.openembedded.org/meta-openembedded
+  658  ls
+  659  cd meta-openembedded/
+  660  ls
+  661  cd ..
+  662  ls
+  663  cd meta
+  664  ls
+  665  cd ..
+  666  ls
+  667  cd -
+  668  cd ..
+  669  source oe-init-build-env
+  670  bitbake core-image-sato
+  671  cd ../meta-openembedded/
+  672  git checkout -b rocko origin/rocko
+  673  cd -
+  674  bitbake core-image-sato
+  675  cd ../meta-java/
+  676  git checkout -b rocko origin/rocko
+  677  cd -
+  678  bitbake core-image-sato
+  679  bitbake core-image-base
+  680  bitbake core-image-sato
+  681  cd ../
+  682  git status
+  683  ls
+  684  cd -
+  685  source oe-init-build-env
+  686  bitbake core-image-sato
+  687  cd ..
+  688  cd meta-iot-cloud/
+  689  ls
+  690  cd recipes-connectivity/
+  691  ls
+  692  rm iot-kura-develop* Workspace/test/poky
+  693  rm -Rf iot-kura-develop* Workspace/test/poky
+  694  exit
+  695  sudo apt-get install -yq --no-install-recommends     build-essential     curl     uuid-dev     git     libjansson-dev     libcurl4-openssl-dev     default-jdk     cmake     libffi-dev     libxml2-dev
+  696  sudo apt-get install -yq --no-install-recommends     libczmq-dev 
+  697  sudo apt-get install -yq --no-install-recommends     libcpputest-dev
+  698  snap install --classic cmake
+  699  sudo snap install --classic cmake
+  700  cd Workspace/
+  701  git clone --single-branch --branch master https://github.com/apache/celix.git
+  702  ls
+  703  cd celix/
+  704  ls
+  705  mkdir build
+  706  cd build
+  707  cmake .. 
+  708  make 
+  709  cd ,,
+  710  cd ..
+  711  wget https://github.com/Kitware/CMake/releases/download/v3.15.2/cmake-3.15.2.tar.gz
+  712  tar-zxvf cmake-3.15.2.tar.gz
+  713  tar -zxvf cmake-3.15.2.tar.gz
+  714  cd cmake-3.15.2/
+  715  ./bootstrap 
+  716  make
+  717  sudo make install
+  718  cmake --version
+  719  exit
+  720  cmake --version
+  721  cd Workspace/celix/
+  722  ls
+  723  mkdir build
+  724  cd build
+  725  cmake .. 
+  726  make 
+  727  sudo make install
+  728  celix
+  729  bg
+  730  ps -ef
+  731  cd ..
+  732  ls
+  733  grep -r "BUILD_REMOTE_SHELL
+  734  cd Workspace/celix/
+  735  ls
+  736  grep -r "BUILD_REMOTE_SHELL"
+  737  telnet localhost:6666
+  738  telnet
+  739  telnet --help
+  740  telnet localhost 6666
+  741  grep -r "remote.shell.telnet.port"
+  742  grep -r "REMOTE_SHELL_TELNET_PORT_PROPERTY_NAME"
+  743  grep -r "DEFAULT_REMOTE_SHELL_TELNET_PORT"
+  744  vi documents/building/README.md 
+  745  grep -r "BUILD_REMOTE_SHELL"
+  746  vi build/CMakeCache.txt 
+  747  grep -r "telnet"
+  748  telnet localhost 6666
+  749  grep -r "BUILD_SHELL" 
+  750  celix 
+  751  celix & 
+  752  ls
+  753  vi CMakeLists.txt 
+  754  cd build/
+  755  vi CMakeLists.txt 
+  756  ls
+  757  vi CMakeCache.txt 
+  758  ls
+  759  ccmake .
+  760  shutdown -h now
+  761  sudo shutdown -h now
+  762  ifconfig 
+  763  celix 
+  764  exit
+  765  telnet localhost 6666
+  766  cd Workspace/celix/
+  767  fins . -name topology_manager.zip
+  768  find . -name topology_manager.zip
+  769  find . -name remote_service_admin_http.zip
+  770  grep -r "remote-service-cfg"
+  771  cd bundles/remote_services/
+  772  ls
+  773  vi README.md 
+  774  çs discovery_
+  775  çs discovery_etcd/
+  776  ls discovery_etcd/
+  777  vi CMakeLists.txt 
+  778  exit
+  779  telnet localhost
+  780  telnet localhost 6666
+  781  telnet --help
+  782  telnet localhost 6666
+  783  celix -h
+  784  celix -p
+  785  cd Workspace/celix/
+  786  ls
+  787  cd build/
+  788  ls
+  789  cd ..
+  790  find . -name config.properties
+  791  vi build/deploy/dm_example/config.properties 
+  792  vi build/deploy/dm_example_cxx/config.properties 
+  793  grep -r "shell"
+  794  find . -name config.properties | grep shell
+  795  find . -name config.properties | grep "shell"
+  796  find . -name config.properties
+  797  grep -r "shell"
+  798  find . -name config.properties
+  799  vi ./build/docker/examples/dm_exmpl/root/config.properties
+  800  celix /home/sandro/Workspace/celix/build/docker/examples/dm_exmpl/root/config.properties
+  801  ls
+  802  cd bundles/
+  803  ls
+  804  cd shell/
+  805  ls
+  806  cd shell
+  807  ls
+  808  cd 
+  809  cd Workspace/
+  810  cd celix/
+  811  vi ./build/docker/examples/dm_exmpl/root/config.properties
+  812  find . -name shell.zip
+  813  cd ..
+  814  cd test/
+  815  mkdir celix
+  816  cd celix/
+  817  cp /home/sandro/Workspace/celix/build/deploy/dm_example/config.properties .
+  818  vi config.properties 
+  819  cp /home/sandro/Workspace/celix/build/deploy/dm_example_cxx/config.properties .
+  820  vi config.properties 
+  821  celix config.properties 
+  822  ccmake .
+  823  cd -
+  824  cd ..
+  825  cd celix/
+  826  cd build/
+  827  ccmake .
+  828  grep - CELIX_BUNDLES_PATH
+  829  grep -r "CELIX_BUNDLES_PATH"
+  830  cd ../../test/celix/
+  831  vi config.properties 
+  832  celix config.properties 
+  833  vi config.properties 
+  834  cd -
+  835  cd ..
+  836  cd bundles/
+  837  ls
+  838  find . -name *.zip
+  839  find . -name "*.zip"
+  840  cd ..
+  841  find . -name "*.zip"
+  842  find . -name shell.zip
+  843  cd ../test/celix/
+  844  vi
+  845  vi config.properties 
+  846  ls
+  847  rm CMake*
+  848  rm -Rf CMake*
+  849  ls
+  850  celix config.properties 
+  851  vi config.properties 
+  852  celix config.properties 
+  853  ls /home/sandro/Workspace/celix/build/bundles/shell/remote_shell/
+  854  vi config.properties 
+  855  celix config.properties 
+  856  exit
+  857  sudo apt install -y torbrowser-launcher
+  858  ifconfig 
+  859  sudo su
+  860  exit
+  861  gpg --homedir "$HOME/.local/share/torbrowser/gnupg_homedir" --refresh-keys --keyserver keyserver.ubuntu.com
+  862  sudo su
+  863  sudo apt remove -y torbrowser-launcher
+  864  exit
+  865  exit
+  866  cd Workspace/test/
+  867  mkdir muproject
+  868  mv muproject/ myproject/
+  869  mkdir -p bundles/HelloWorld_cxx/src
+  870  cd ..
+  871  mkdir myproject-build
+  872  cd myproject-build
+  873  cmake ../myproject
+  874  make all  
+  875  make
+  876  ls
+  877  rm -Rf *
+  878  ls -la
+  879  cmake ../myproject
+  880  sudo apt-get install libssl-dev
+  881  cmake ../myproject
+  882  make all
+  883  make -j
+  884  ls
+  885  make -j
+  886  cmake ../myproject
+  887  make -j
+  888  ls
+  889  cd deploy/myproject/
+  890  ls
+  891  ./myproject 
+  892  '''
+  893  cd ..
+  894  cd celix/
+  895  ls
+  896  find . -name remote-service-cfg
+  897  ls
+  898  cd examples/celix-examples/
+  899  ls
+  900  cd ..
+  901  ls
+  902  cd bundles/
+  903  ls
+  904  cd remote_services/
+  905  ls
+  906  cd examples/
+  907  ls
+  908  vi CMakeLists.txt 
+  909  ls
+  910  z`cd 
+  911  cd ..
+  912  ls
+  913  find . -name deploy
+  914  cd build/deploy/
+  915  ls
+  916  cd ..
+  917  ls
+  918  cd examples/
+  919  ls
+  920  cd ..
+  921  ls
+  922  cd bundles/remote_services/
+  923  ls
+  924  cmake
+  925  cd ..
+  926  cd test/
+  927  ls
+  928  mkdir rsa-build
+  929  cd rsa-build/
+  930  ls
+  931  cmake ../../celix/bundles/remote_services/examples
+  932  make all
+  933  exit
+  934  ps -ef
+  935  exit
+  936  ''
+  937  ls
+  938  cd
+  939  cd Workspace/test/rsa-build/
+  940  cmake ../../celix/bundles/remote_services/examples
+  941  make all
+  942  cmake ../../celix/bundles/remote_services/examples
+  943  make all
+  944  ls
+  945  make -j
+  946  ls
+  947  make
+  948  cd build/
+  949  ls
+  950  ls deploy/
+  951  ccmake .
+  952  cd Workspace/celix/
+  953  ls
+  954  ccmake .
+  955  cd build/
+  956  ls
+  957  cmake ..
+  958  make
+  959  ccmake .
+  960  cmake ..
+  961  ccmake .
+  962  grep -r "BUILD_REMOTE_SERVICE_ADMIN"
+  963  vi CMakeCache.txt 
+  964  vi ../bundles/remote_services/CMakeLists.txt 
+  965  grep -r "REMOTE_SERVICE_ADMIN"
+  966  make
+  967  exit
+  968  exit
+  969  vi Workspace/celix/bundles/remote_services/CMakeLists.txt 
+  970  vi Workspace/celix/bundles/remote_services/examples/CMakeLists.txt 
+  971  vi Workspace/celix/bundles/remote_services/examples/calculator_api/CMakeLists.txt 
+  972  vi Workspace/celix/bundles/remote_services/examples/CMakeLists.txt 
+  973  exit
+  974  cd Workspace/
+  975  ls
+  976  mv cmake-3.15.2.tar.gz ../Downloads/
+  977  mv celix/ celix_bck
+  978  git clone --single-branch --branch master https://github.com/apache/celix.git
+  979  cd celix
+  980  mkdir build
+  981  cd build
+  982  cmake .. 
+  983  ccmake .
+  984  exit
+  985  cd build/
+  986  ls
+  987  ccmake .
+  988  ls
+  989  cd Workspace/celix_bck/
+  990  ls
+  991  find . -namae shell.zip
+  992  find . -name shell.zip
+  993  find . -name discovery.zip
+  994  find . -name rsa_topology_manager.zip
+  995  cd build/deploy/
+  996  ls
+  997  cd ..
+  998  ls
+  999  find bundles/remote_services/ -name "*.zip"
+ 1000  find bundles/remote_services/ -name "*calculator*"
+ 1001  cd deploy/
+ 1002  ls
+ 1003  cd dm_example_cxx/
+ 1004  ls
+ 1005  ls bundles/
+ 1006  ./dm_example_cxx 
+ 1007  cd ..
+ 1008  ls
+ 1009  find bundles/remote_services/ -name "*rsa*"
+ 1010  find . -name "*rsa*"
+ 1011  cd services_example/
+ 1012  ls
+ 1013  cd services_example_cxx/
+ 1014  ls
+ 1015  ./services_example_cxx 
+ 1016  quit
+ 1017  cd ..
+ 1018  find . -name Dockerfile
+ 1019  cd build/docker/examples/dm_exmpl_cxx_docker/
+ 1020  ld
+ 1021  ls
+ 1022  docker build
+ 1023  ls workspace/
+ 1024  vi Dockerfile 
+ 1025  cd ..
+ 1026  ls
+ 1027  cd ..
+ 1028  cd deploy/
+ 1029  ls
+ 1030  cd services_example/
+ 1031  ls
+ 1032  cd services_example_cxx/
+ 1033  ls
+ 1034  ./services_example_cxx 
+ 1035  git status
+ 1036  git diff
+ 1037  git status
+ 1038  git log
+ 1039  git push
+ 1040  cd Workspace/celix/
+ 1041  ls
+ 1042  exit
+ 1043  celix 
+ 1044  cd Workspace/
+ 1045  cd test/
+ 1046  ls
+ 1047  cd celix/
+ 1048  ls
+ 1049  cd ..
+ 1050  ls
+ 1051  mkdir celix_test
+ 1052  cd celix
+ 1053  cd ..
+ 1054  cd celix_test/
+ 1055  ls
+ 1056  vi CMakeLists.txt
+ 1057  ccmake .
+ 1058  ls
+ 1059  cmake .
+ 1060  vi CMakeLists.txt
+ 1061  exit
+ 1062  cd Workspace/celix
+ 1063  ls
+ 1064  vi CMakeLists.txt 
+ 1065  cmake .
+ 1066  cd ..
+ 1067  mkdir caf_test
+ 1068  cd Workspace/test/
+ 1069  ls
+ 1070  cd myproject
+ 1071  cd ..
+ 1072  ls
+ 1073  mkdir celix_test_build
+ 1074  cd celix_test_build/
+ 1075  ls
+ 1076  cmake ../celix_test
+ 1077  cd ..
+ 1078  mkdir caf_test_build
+ 1079  cd caf_test
+ 1080  cd ..
+ 1081  cd caf_test_build/
+ 1082  cmake ../caf_test
+ 1083  cd ..
+ 1084  cd myproject
+ 1085  ls
+ 1086  vi CMakeLists.txt 
+ 1087  cd ..
+ 1088  cd myproject-build/
+ 1089  cmake ../myproject
+ 1090  cd ..
+ 1091  ls
+ 1092  mkdir hometec
+ 1093  exit
+ 1094  cd bui
+ 1095  cd build/
+ 1096  ls
+ 1097  cmake ..
+ 1098  ls
+ 1099  rm -Rf *
+ 1100  cmake ..
+ 1101  make all
+ 1102  make -j
+ 1103  ls
+ 1104  cd deploy/hometec/
+ 1105  ls
+ 1106  ./hometec 
+ 1107  make -j
+ 1108  cd ..
+ 1109  make -j
+ 1110  ./deploy/hometec/hometec 
+ 1111  rm -Rf *
+ 1112  cmake ..
+ 1113  make -j
+ 1114  ./deploy/hometec/hometec 
+ 1115  make
+ 1116  git status
+ 1117  ./deploy/hometec/hometec 
+ 1118  quit
+ 1119  cmake .
+ 1120  make all
+ 1121  cd /home/sandro/Workspace/hometec/yocto/build/tmp-glibc/work/armv7at2hf-neon-angstrom-linux-gnueabi/hometec/1.0-r0/git
+ 1122  ls
+ 1123  exit
+ 1124  git status
+ 1125  exit
+ 1126  cd Workspace/hometec/
+ 1127  ls
+ 1128  vi CMakeLists.txt 
+ 1129  mv ../test/hometec/bundles ../test/hometec/CMakeLists.txt 
+ 1130  mv ../test/hometec/bundles ../test/hometec/CMakeLists.txt .
+ 1131  ls
+ 1132  make
+ 1133  ls
+ 1134  cd deploy/hometec/
+ 1135  ls
+ 1136  cd -
+ 1137  ./deploy/hometec/hometec 
+ 1138  cd ..
+ 1139  cd test/hometec/
+ 1140  ls
+ 1141  cd ..
+ 1142  cd hometec/
+ 1143  ls
+ 1144  cp -R CMakeLists.txt bundles ../test/hometec/
+ 1145  cd ..
+ 1146  cd test/hometec/
+ 1147  ls
+ 1148  rm -Rf build/
+ 1149  make
+ 1150  cmake
+ 1151  cmake .
+ 1152  cd ..
+ 1153  cd cd celix
+ 1154  ls
+ 1155  cd celix
+ 1156  ls
+ 1157  cd bundles/shell/
+ 1158  ls
+ 1159  telnet localhost 6666
+ 1160  cd /home/sandro/Workspace/hometec/yocto/build/tmp-glibc/work/armv7at2hf-neon-angstrom-linux-gnueabi/hometec/1.0-r0/git
+ 1161  ls
+ 1162  git status
+ 1163  git log
+ 1164  git log --decorate
+ 1165  git checkout master
+ 1166  git log --decorate
+ 1167  git pull
+ 1168  git log --decorate
+ 1169  make
+ 1170  cd -
+ 1171  git status
+ 1172  git add -u
+ 1173  git status
+ 1174  git commit 
+ 1175  git push
+ 1176  make
+ 1177  ./deploy/hometec/hometec 
+ 1178  make
+ 1179  ./deploy/hometec/hometec 
+ 1180  make
+ 1181  ./deploy/hometec/hometec 
+ 1182  cd yocto/
+ 1183  source oe-init-build-env
+ 1184  bitbake core-image-base
+ 1185  cd ..
+ 1186  git status
+ 1187  git diff
+ 1188  git status
+ 1189  git add bundles/
+ 1190  git add .gitignore CMakeLists.txt metas/meta-hometec/recipes-hometec/hometec/hometec.bb 
+ 1191  git status
+ 1192  git add .gitignore 
+ 1193  git status
+ 1194  rm bundles/hometec_service/hometec_service.zip 
+ 1195  rm bundles/hometec_service/libhometec_service.so*
+ 1196  git status
+ 1197  git checkout -- .
+ 1198  git status
+ 1199  git rm bundles/hometec_service/hometec_service.zip 
+ 1200  git rm -f bundles/hometec_service/hometec_service.zip 
+ 1201  git rm -f bundles/hometec_service/libhometec_service.so*
+ 1202  git status
+ 1203  git commit
+ 1204  git push
+ 1205  cd yocto/
+ 1206  source oe-init-build-env
+ 1207  bitbake core-image-base
+ 1208  find . -name "*hometec$"
+ 1209  find . -name "*hometec"
+ 1210  find . -name "*hometec/hometec"
+ 1211  find . -name "*hometec//hometec"
+ 1212  find . -name "*hometec\/hometec"
+ 1213  find . -name "*hometec//hometec"
+ 1214  find . -name "*dedploy*hometec"
+ 1215  find . -name "*deploy*hometec"
+ 1216  find . -name "*hometec*hometec"
+ 1217  find . -name "*hometec$"
+ 1218  find . -name "*hometec"
+ 1219  find . -name "*hometec" | grep "deploy"
+ 1220  bitbake core-image-base
+ 1221  cd Workspace/hometec/
+ 1222  ls
+ 1223  cd yocto/
+ 1224  source oe-init-build-env
+ 1225  bitbake core-image-base
+ 1226  rm tmp-glibc/work/x86_64-linux/openjdk-8-native/
+ 1227  cd tmp-glibc/work/x86_64-linux/openjdk-8-native/
+ 1228  ls
+ 1229  rm -Rf 172b11-r0/
+ 1230  cd -
+ 1231  bitbake core-image-base
+ 1232  cd tmp-glibc/work/x86_64-linux/
+ 1233  ls
+ 1234  rm -Rf openjdk-8-native/
+ 1235  cd -
+ 1236  bitbake core-image-base
+ 1237  git log
+ 1238  git log --decorate
+ 1239  cd ..
+ 1240  git log --decorate
+ 1241  cd ..
+ 1242  cd metas/meta-angstrom/
+ 1243  git log --decorate
+ 1244  cd ..
+ 1245  ls
+ 1246  cd meta-openembedded/
+ 1247  git log --decorate
+ 1248  cd ..
+ 1249  cd yocto/build/
+ 1250  bitbake core-image-base
+ 1251  cd ..
+ 1252  cd metas/meta-hometec/recipes-celix/
+ 1253  vi celix/celix.bb 
+ 1254  cd ..
+ 1255  cd yocto/
+ 1256  source oe-init-build-env
+ 1257  bitbake core-image-base
+ 1258  exit
+ 1259  telnet localhost 6666
+ 1260  quit
+ 1261  git status
+ 1262  git add -u
+ 1263  git status
+ 1264  git commit
+ 1265  git push
+ 1266  cd yocto/
+ 1267  source oe-init-build-env
+ 1268  bitbake core-image-base
+ 1269  ls /usr/local/share/celix/cmake/modules
+ 1270  ls /usr/local/share/celix/cmake/
+ 1271  ls
+ 1272  ls /usr/local/share/celix/cmake/Modules/
+ 1273  find /usr/local/share/celix -name FindCelix.cmake
+ 1274  find /usr/local/share/celix -name *.cmake
+ 1275  bitbake core-image-base
+ 1276  cd ..
+ 1277  ls
+ 1278  ls build/
+ 1279  ls
+ 1280  mv build/ build_bck
+ 1281  make
+ 1282  ls
+ 1283  cmake
+ 1284  cmake .
+ 1285  ls
+ 1286  git status
+ 1287  rm -Rf build_bck/
+ 1288  ls
+ 1289  git status
+ 1290  rm -Rf deploy/
+ 1291  ls
+ 1292  git status
+ 1293  cd celix/
+ 1294  ls
+ 1295  cd ..
+ 1296  rm celix/
+ 1297  rm -Rf celix/
+ 1298  ls
+ 1299  make
+ 1300  ./deploy/hometec/hometec 
+ 1301  cd yocto/
+ 1302  source oe-init-build-env
+ 1303  bitbake core-image-base
+ 1304  cd tmp-glibc/work/x86_64-linux/
+ 1305  ls
+ 1306  ./deploy/hometec/hometec 
+ 1307  telnet localhost 6666
+ 1308  cd metas/
+ 1309  ls
+ 1310  git submodule add -b thud git://git.yoctoproject.org/meta-java 
+ 1311  df -h
+ 1312  cd yocto/
+ 1313  source oe-init-build-env
+ 1314  bitbake core-image-base
+ 1315  cd Workspace/hometec/
+ 1316  git status
+ 1317  git diff
+ 1318  cd yocto/
+ 1319  source oe-init-build-env
+ 1320  bitbake core-image-base
+ 1321  vi tmp-glibc/work/x86_64-linux/openjdk-8-native/172b11-r0/temp/log.do_compile.4340 
+ 1322  find . -name "*openjdk-8*"
+ 1323  rm -Rf ./sstate-cache/41/sstate:openjdk-8*
+ 1324  rm -Rf ./sstate-cache/ubuntu-16.04/b2/sstate:openjdk-8
+ 1325  rm -Rf ./sstate-cache/ubuntu-16.04/b2/sstate:openjdk-8*
+ 1326  rm -Rf tmp-glibc/buildstats/Angstrom\ v2018.12/openjdk-8-*
+ 1327  rm -Rf tmp-glibc/sstate-control/manifest-armv7at2hf-neon-openjdk-8.populate_lic 
+ 1328  rm -Rf tmp-glibc/sstate-control/manifest-x86_64-openjdk-8-native.populate_lic 
+ 1329  rm -Rf tmp-glibc/deploy/licenses/raspberrypi3/openjdk-8*
+ 1330  rm -Rf tmp-glibc/work/x86_64-linux/openjdk-8-native
+ 1331  rm -Rf tmp-glibc/work/armv7at2hf-neon-angstrom-linux-gnueabi/openjdk-8
+ 1332  rm -Rf tmp-glibc/stamps/x86_64-linux/openjdk-8-native
+ 1333  rm -Rf tmp-glibc/stamps/armv7at2hf-neon-angstrom-linux-gnueabi/openjdk-8
+ 1334  find . -name "*openjdk-8*"
+ 1335  bitbake core-image-base
+ 1336  vi tmp-glibc/work/x86_64-linux/openjdk-8-native/172b11-r0/build/config.log 
+ 1337  vi ../../metas/meta-hometec/recipes-celix/celix/celix.bb 
+ 1338  bitbake core-image-base
+ 1339  cd /home/sandro/Workspace/hometec/yocto/build/tmp-glibc/work/x86_64-linux/openjdk-8-native/172b11-r0/jdk8u-33d274a7dda0
+ 1340  ls
+ 1341  rm -Rf *
+ 1342  cd -
+ 1343  bitbake core-image-base
+ 1344  history 
+ 1345  rm -Rf ./sstate-cache/41/sstate:openjdk-8*
+ 1346  rm -Rf ./sstate-cache/ubuntu-16.04/b2/sstate:openjdk-8
+ 1347  rm -Rf ./sstate-cache/ubuntu-16.04/b2/sstate:openjdk-8*
+ 1348  rm -Rf tmp-glibc/buildstats/Angstrom\ v2018.12/openjdk-8-*
+ 1349  rm -Rf tmp-glibc/sstate-control/manifest-armv7at2hf-neon-openjdk-8.populate_lic 
+ 1350  rm -Rf tmp-glibc/sstate-control/manifest-x86_64-openjdk-8-native.populate_lic 
+ 1351  rm -Rf tmp-glibc/deploy/licenses/raspberrypi3/openjdk-8*
+ 1352  rm -Rf tmp-glibc/work/x86_64-linux/openjdk-8-native
+ 1353  rm -Rf tmp-glibc/work/armv7at2hf-neon-angstrom-linux-gnueabi/openjdk-8
+ 1354  rm -Rf tmp-glibc/stamps/x86_64-linux/openjdk-8-native
+ 1355  rm -Rf tmp-glibc/stamps/armv7at2hf-neon-angstrom-linux-gnueabi/openjdk-8
+ 1356  find . -name "*openjdk-8*"
+ 1357  bitbake core-image-base
+ 1358  cd ..
+ 1359  code .
+ 1360  ls
+ 1361  cd ..
+ 1362  ls
+ 1363  cd test/
+ 1364  ls
+ 1365  cd ..
+ 1366  ls
+ 1367  mv celix_bck/ test/
+ 1368  ls
+ 1369  cd hometec/yocto/build/
+ 1370  tail -f nohup.out 
+ 1371  cd ..
+ 1372  source oe-init-build-env
+ 1373  bitbake core-image-base
+ 1374  df -h
+ 1375  cd ..
+ 1376  git add .
+ 1377  git status
+ 1378  git commit
+ 1379  git status
+ 1380  git log --decorate
+ 1381  git checkout celix
+ 1382  git status
+ 1383  git log --decorate
+ 1384  git checkout master
+ 1385  git log --decorate
+ 1386  git reset --hard HEAD^^^
+ 1387  git log --decorate
+ 1388  git push
+ 1389  git log --decorate
+ 1390  git push -f
+ 1391  git log --decorate
+ 1392  git checkout celix
+ 1393  git log
+ 1394  git log --decorate
+ 1395  git push
+ 1396  git log --decorate
+ 1397  git checkout docker
+ 1398  git log --decorate
+ 1399  git checkout master
+ 1400  git cherry-pick cac1b4e1131a4d0d30431246bcd7554ba53935d5
+ 1401  git log --decorate
+ 1402  git branch -D docker
+ 1403  git checkout -b docker
+ 1404  git log --decorate
+ 1405  git checkout master
+ 1406  git reset --hard HEAD^
+ 1407  git log --decorate
+ 1408  git push
+ 1409  git checkout docker
+ 1410  git log --decorate
+ 1411  cd yocto/
+ 1412  source oe-init-build-env
+ 1413  bitbake core-image-base
+ 1414  git status
+ 1415  git log
+ 1416  cd ../..
+ 1417  git status
+ 1418  git log --decorate
+ 1419  git push origin docker
+ 1420  git log --decorate
+ 1421  git checkout master
+ 1422  cd -
+ 1423  bitbake core-image-base
+ 1424  git push
+ 1425  cd ..
+ 1426  git push
+ 1427  exit
+ 1428  cd metas/
+ 1429  git submodule add -b thud git://git.yoctoproject.org/meta-selinux
+ 1430  cd yocto/
+ 1431  source oe-init-build-env
+ 1432  bitbake core-image-base
+ 1433  find . -name libffi
+ 1434  grep -r "FFI_INCLUDE_DIR"
+ 1435  git diff HEAD
+ 1436  cd ..
+ 1437  git diff HEAD
+ 1438  git status
+ 1439  git add conf/bblayers.conf metas/meta-hometec/recipes-hometec/hometec/hometec.bb 
+ 1440  git status
+ 1441  git log
+ 1442  git checkout -b celix
+ 1443  git status
+ 1444  git add metas/meta-hometec/recipes-celix
+ 1445  git status
+ 1446  git add -f metas/meta-hometec/recipes-celix
+ 1447  git status
+ 1448  git commit
+ 1449  git log
+ 1450  git push
+ 1451  git log --decorate
+ 1452  git push
+ 1453  git push -u origin branch
+ 1454  git push origin celix
+ 1455  git log --decorate
+ 1456  git checkout master
+ 1457  git checkout -b docker
+ 1458  cd metas/
+ 1459  git submodule add -b thud git://git.yoctoproject.org/meta-virtualization
+ 1460  cd ..
+ 1461  cd yocto/
+ 1462  source oe-init-build-env
+ 1463  bitbake core-image-base
+ 1464  nohup bitbake core-image-base &
+ 1465  ps -ef
+ 1466  ps -ef | grep bit
+ 1467  ls
+ 1468  tail -f nohup.out 
+ 1469  cd Workspace/
+ 1470  cd hometec/
+ 1471  make
+ 1472  git checkout celix
+ 1473  make
+ 1474  cd yocto/
+ 1475  source oe-init-build-env
+ 1476  nohup bitbake core-image-base &
+ 1477  ps -ef 
+ 1478  tail -f nohup.out 
+ 1479  bitbake core-image-base
+ 1480  git log
+ 1481  git log --decorate
+ 1482  git checkout master
+ 1483  git checkout -b devel
+ 1484  git log --decorate
+ 1485  cd metas/
+ 1486  ls
+ 1487  git submodule add -b thud https://github.com/joaohf/meta-erlang
+ 1488  ls
+ 1489  cd meta-erlang/
+ 1490  ks
+ 1491  ls
+ 1492  git checkout master
+ 1493  ls
+ 1494  cd ..
+ 1495  cd yocto/
+ 1496  source oe-init-build-env
+ 1497  bitbake core-image-base
+ 1498  sudo su
+ 1499  exit
+ 1500  sudo su
+ 1501  exit
+ 1502  sudo su
+ 1503  wxit
+ 1504  exit
+ 1505  sudo su
+ 1506  exit
+ 1507  sudo su
+ 1508  exit
+ 1509  cd build/
+ 1510  ld
+ 1511  ls
+ 1512  make
+ 1513  cmake ..
+ 1514  sudo su
+ 1515  exit
+ 1516  sudo su
+ 1517  exit
+ 1518  ls
+ 1519  sudo su
+ 1520  exit
+ 1521  sudo su
+ 1522  exit
+ 1523  sudo su
+ 1524  exit
+ 1525  sudo su
+ 1526  exit
+ 1527  sudo su
+ 1528  exit
+ 1529  cd Workspace/hometec/
+ 1530  ls
+ 1531  cd deploy/
+ 1532  ls
+ 1533  cd hometec/
+ 1534  ls
+ 1535  ./hometec 
+ 1536  ls
+ 1537  cd ..
+ 1538  ls
+ 1539  cd ..
+ 1540  ls
+ 1541  cd yocto/build/
+ 1542  ls
+ 1543  find . -name hometec
+ 1544  find . -name "*.img"
+ 1545  cd ..
+ 1546  source oe-init-build-env
+ 1547  bitbake core-image-base
+ 1548  ls
+ 1549  cd tmp-glibc/deploy/images/raspberrypi3/
+ 1550  ls
+ 1551  cd ..
+ 1552  ls
+ 1553  cd ..
+ 1554  ls
+ 1555  cd ..
+ 1556  ls
+ 1557  cd deploy/images/
+ 1558  ls
+ 1559  cd raspberrypi3/
+ 1560  ls
+ 1561  find . -name "*.img"
+ 1562  dmesg 
+ 1563  dd bs=4M if=Angstrom-core-image-base-glibc-ipk-v2018.12-raspberrypi3.rootfs.rpi-sdimg of=/dev/mmcblk0 status=progress conv=fsync
+ 1564  sudo dd bs=4M if=Angstrom-core-image-base-glibc-ipk-v2018.12-raspberrypi3.rootfs.rpi-sdimg of=/dev/mmcblk0 status=progress conv=fsync
+ 1565  sudo dd bs=4M if=Angstrom-core-image-base-glibc-ipk-v2018.12-raspberrypi3.rootfs.rpi-sdimg of=/dev/mmcblk0 conv=fsync
+ 1566  umount /dev/mmcblk0
+ 1567  sudo umount /dev/mmcblk0
+ 1568  sudo umount /dev/mmcblk0p1 
+ 1569  sudo umount /dev/mmcblk0p2 
+ 1570  sudo dd bs=1M if=Angstrom-core-image-base-glibc-ipk-v2018.12-raspberrypi3.rootfs.rpi-sdimg of=/dev/mmcblk0
+ 1571  exit
+ 1572  git status
+ 1573  history | grep git
+ 1574  git log --decorate
+ 1575  git status
+ 1576  git add -u
+ 1577  git status
+ 1578  git log
+ 1579  git commit -m "Create a global CMakeLists"
+ 1580  git push
+ 1581  ls
+ 1582  cd build/
+ 1583  ls
+ 1584  cmake ..
+ 1585  make
+ 1586  history | grep docker
+ 1587  docker images
+ 1588  git status
+ 1589  cd yocto/
+ 1590  ls
+ 1591  source oe-init-build-env
+ 1592  bitbake core-image-base
+ 1593  git status
+ 1594  cd ..
+ 1595  git status
+ 1596  git add code/service
+ 1597  git status
+ 1598  git log
+ 1599  git log --decorate
+ 1600  cd yocto/
+ 1601  source oe-init-build-env
+ 1602  bitbake core-image-base
+ 1603  cd Workspace/hometec/
+ 1604  ls
+ 1605  cd yocto/
+ 1606  ls
+ 1607  source oe-init-build-env
+ 1608  bitbake core-image-base
+ 1609  ls
+ 1610  rm -Rf tmp-glibc/
+ 1611  #sudo dd bs=1M if= of=/dev/mmcblk0
+ 1612  cd tmp-glibc/deploy/images/
+ 1613  ls
+ 1614  cd raspberrypi3/
+ 1615  ls
+ 1616  sudo dd bs=1M if=core-image-base-raspberrypi3.rpi-sdimg of=/dev/mmcblk0
+ 1617  ls -la
+ 1618  ls -lsra
+ 1619  ls -ltra
+ 1620  sudo dd bs=1M if=core-image-base-raspberrypi3.rpi-sdimg of=/dev/mmcblk0
+ 1621  docker images
+ 1622  cd ..
+ 1623  history > commands
