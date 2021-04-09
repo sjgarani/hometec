@@ -1,5 +1,30 @@
 # Hometec
 
+## Create Environment
+
+git submodule add -b dunfell git://git.yoctoproject.org/poky poky
+git submodule add -b dunfell git://git.yoctoproject.org/meta-raspberrypi metas/meta-raspberrypi
+git submodule add -b dunfell git://git.yoctoproject.org/meta-java metas/meta-java
+git submodule add -b dunfell git://git.openembedded.org/meta-openembedded metas/meta-openembedded
+
+cd poky/
+./scripts/install-buildtools
+source buildtools/environment-setup-x86_64-pokysdk-linux
+source oe-init-build-env
+
+bitbake-layers add-layer ../../metas/meta-raspberrypi/
+bitbake-layers add-layer ../../metas/meta-java/
+bitbake-layers add-layer ../../metas/meta-openembedded/meta-oe/
+
+Edit conf/local.conf, add MACHINE ?= "raspberrypi3".
+
+## Generate Raspberry Pi 3 image
+
+### Article
+
+https://infoembedded.com/blog/how-to-build-custom-linux-using-yocto-for-raspberry-pi/
+
+###### Old:
 Install
 
 Artigo:

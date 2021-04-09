@@ -1,0 +1,8 @@
+@namespace("com.garani.hometec.api")
+@version("1.0.0")
+protocol LedService {
+    @index(0)
+    void setState(boolean state);
+    @index(1)
+    boolean getState();
+}

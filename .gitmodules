@@ -1,20 +1,16 @@
-[submodule "yocto"]
-	path = yocto
-	url = http://git.yoctoproject.org/git/poky
-	branch = thud
-[submodule "metas/meta-openembedded"]
-	path = metas/meta-openembedded
-	url = git://git.openembedded.org/meta-openembedded
-	branch = thud
-[submodule "metas/meta-angstrom"]
-	path = metas/meta-angstrom
-	url = git://github.com/Angstrom-distribution/meta-angstrom.git
-	branch = angstrom-v2018.12-thud
+[submodule "poky"]
+	path = poky
+	url = git://git.yoctoproject.org/poky
+	branch = dunfell
 [submodule "metas/meta-raspberrypi"]
 	path = metas/meta-raspberrypi
 	url = git://git.yoctoproject.org/meta-raspberrypi
-	branch = thud
-[submodule "metas/meta-qt5"]
-	path = metas/meta-qt5
-	url = https://github.com/meta-qt5/meta-qt5.git
-	branch = thud
+	branch = dunfell
+[submodule "metas/meta-java"]
+	path = metas/meta-java
+	url = git://git.yoctoproject.org/meta-java
+	branch = dunfell
+[submodule "metas/meta-openembedded"]
+	path = metas/meta-openembedded
+	url = git://git.openembedded.org/meta-openembedded
+	branch = dunfell
