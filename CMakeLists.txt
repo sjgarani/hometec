@@ -15,7 +15,7 @@ add_celix_container(hometec
         Celix::rsa_discovery_configured
         Celix::rsa_topology_manager
         Celix::rsa_dfi
-        Celix::log_admin
+        Celix::log_service
         hometec_service
     PROPERTIES
         RSA_PORT=18888

@@ -13,7 +13,10 @@ celix_status_t maintecBndStart(struct activator *act, celix_bundle_context_t *ct
     act->svcId = -1L;
     act->led = led_create();
     if (act->led != NULL) {
-        act->led->log_helper = celix_logHelper_create(ctx, "led");
+        celix_status_t status = logHelper_create(ctx, &act->led->log_helper);
+        if (status == CELIX_SUCCESS) {
+            logHelper_start(act->led->log_helper);
+        }
         act->led_service.handle = act->led;
         act->led_service.setState = (void*)led_setState;
         act->led_service.getState = (void*)led_getState;
@@ -32,6 +35,8 @@ celix_status_t maintecBndStop(struct activator *act, celix_bundle_context_t *ctx
     if (act->led != NULL) {
         led_destroy(act->led);
     }
+    logHelper_stop(act->led->log_helper);
+    logHelper_destroy(&act->led->log_helper);
     return CELIX_SUCCESS;
 }
 

@@ -7,7 +7,7 @@ add_celix_bundle(hometec_service
 )
 
 target_include_directories(hometec_service PRIVATE src)
-target_link_libraries(hometec_service PRIVATE Celix::log_helper Celix::rsa_spi hometec_api)
+target_link_libraries(hometec_service PRIVATE Celix::log_service_api Celix::log_helper Celix::rsa_spi hometec_api)
 
 get_target_property(DESCR hometec_api INTERFACE_DESCRIPTOR)
 celix_bundle_files(hometec_service ${DESCR} DESTINATION .)
