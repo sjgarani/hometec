@@ -23,6 +23,12 @@ do_install() {
    install -m 0644 ${WORKDIR}/hometec.service ${D}${systemd_unitdir}/system
 }
 
+
+INITSCRIPT_NAME = "hometec"
+INITSCRIPT_PARAMS = "defaults 10"
+
+inherit systemd
+
 #Pack the path
 FILES_${PN} += "/usr/bin/"
 FILES_${PN} += "/lib/systemd/system"
