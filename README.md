@@ -2,6 +2,11 @@
 
 ## Create Environment
 
+git clone -b zero https://github.com/sjgarani/hometec.git hometec
+cd hometec
+export HWS=$(pwd)
+git submodule update --init --recursive
+
 git submodule add -b dunfell git://git.yoctoproject.org/poky poky
 git submodule add -b dunfell git://git.yoctoproject.org/meta-raspberrypi metas/meta-raspberrypi
 git submodule add -b dunfell git://git.yoctoproject.org/meta-java metas/meta-java
@@ -16,13 +21,25 @@ bitbake-layers add-layer ../../metas/meta-raspberrypi/
 bitbake-layers add-layer ../../metas/meta-java/
 bitbake-layers add-layer ../../metas/meta-openembedded/meta-oe/
 
-Edit conf/local.conf, add MACHINE ?= "raspberrypi3".
+rm conf/local.conf conf/bblayers.conf
+ln -s $HWS/conf/local.conf $HWS/poky/build/conf/local.conf
+ln -s $HWS/conf/bblayers.conf $HWS/poky/build/conf/lobblayerscal.conf
 
 ## Generate Raspberry Pi 3 image
+
+cd poky/
+source oe-init-build-env
+bitbake core-image-base
+
+## Run in Docker
+
+### From Yocto image
+
 
 ### Article
 
 https://infoembedded.com/blog/how-to-build-custom-linux-using-yocto-for-raspberry-pi/
+https://jacobncalvert.com/2019/12/22/building-a-customized-linux-image-for-raspberry-pi-with-yocto-docker-support/
 
 ###### Old:
 Install
