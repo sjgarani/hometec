@@ -1,5 +1,6 @@
 #include <stdlib.h>
-// #include "led_service_impl.h"
+#include "led_service_impl.h"
+#include "celix_errno.h"
 
 led_t* led_create(void) {
     struct led *tmp = calloc(1, sizeof(*tmp));
