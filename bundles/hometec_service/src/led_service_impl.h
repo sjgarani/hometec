@@ -3,10 +3,10 @@
 
 #include <stdbool.h>
 #include "led_service.h"
-#include "log_helper.h"
+// #include "log_helper.h"
 
 typedef struct led {
-    log_helper_t *log_helper;
+    // log_helper_t *log_helper;
     bool state;
 } led_t;
 
