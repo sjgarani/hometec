@@ -1,6 +1,6 @@
-From eb1f95a8d0e2e55c485c5c3875a1773ee6bfedd9 Mon Sep 17 00:00:00 2001
+From e13757e13e62e5612c801e4a9a49eb4ca1e04d58 Mon Sep 17 00:00:00 2001
 From: Sandro Garani <sandro.garani@outlook.com>
-Date: Tue, 16 Feb 2021 11:31:50 -0300
+Date: Thu, 15 Apr 2021 11:04:19 -0300
 Subject: [PATCH 2/2] Update to Generate Shared Library Version
 
 ---
@@ -9,10 +9,10 @@ Subject: [PATCH 2/2] Update to Generate Shared Library Version
  2 files changed, 4 insertions(+)
 
 diff --git a/bundles/http_admin/civetweb/CMakeLists.txt b/bundles/http_admin/civetweb/CMakeLists.txt
-index 687a397..fd14ea0 100644
+index 8b43cf2..8440354 100644
 --- a/bundles/http_admin/civetweb/CMakeLists.txt
 +++ b/bundles/http_admin/civetweb/CMakeLists.txt
-@@ -39,6 +39,8 @@ target_include_directories(civetweb_static PUBLIC
+@@ -41,6 +41,8 @@ target_link_libraries(civetweb_static PUBLIC CURL::libcurl)
  target_compile_options(civetweb_shared PRIVATE -w -DUSE_WEBSOCKET)
  target_compile_options(civetweb_static PRIVATE -w -DUSE_WEBSOCKET)
  
