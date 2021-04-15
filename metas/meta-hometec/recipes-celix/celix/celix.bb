@@ -15,6 +15,6 @@ S = "${WORKDIR}/git"
 
 inherit pkgconfig cmake
 
-EXTRA_OECMAKE = "-DBUILD_LAUNCHER=OFF"
+EXTRA_OECMAKE = "-DBUILD_LAUNCHER=OFF -DBUILD_RSA_DISCOVERY_ETCD=ON -DBUILD_RSA_REMOTE_SERVICE_ADMIN_DFI=ON"
 
 INSANE_SKIP_${PN} += "useless-rpaths installed-vs-shipped"
