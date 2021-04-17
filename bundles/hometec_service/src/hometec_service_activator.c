@@ -19,6 +19,7 @@ static celix_status_t hometec_activator_start(hometec_service_activator_t *activ
 }
 
 static celix_status_t hometec_activator_stop(hometec_service_activator_t *activator, celix_bundle_context_t *ctx) {
+    celix_bundleContext_unregisterService(ctx, activator->turn_on_service_id);
     return CELIX_SUCCESS;
 }
 
