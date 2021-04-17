@@ -1,0 +1,3 @@
+[submodule "bundles/lightec_api"]
+	path = bundles/lightec_api
+	url = https://github.com/sjgarani/lightec_api.git
