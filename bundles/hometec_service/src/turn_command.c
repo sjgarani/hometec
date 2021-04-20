@@ -32,3 +32,17 @@ bool turn_on_command_execute(void *handle, const char *const_line, FILE *out, FI
         fprintf(out, "Fail!\n");
     }
 }
+
+bool turn_off_command_execute(void *handle, const char *const_line, FILE *out, FILE *err) {
+    celix_bundle_context_t *context = handle;
+
+    struct led_callback_data data;
+    data.state = 0;
+
+    bool called = celix_bundleContext_useService(context, LED_SERVICE, &data, led_callback);
+    if (called) {
+        fprintf(out, "OK! Rc=%d\n", data.rc);
+    } else {
+        fprintf(out, "Fail!\n");
+    }
+}

@@ -1,7 +1,7 @@
 add_celix_bundle(hometec_service
     SOURCES
         src/hometec_service_activator
-        src/turn_on_command
+        src/turn_command
     VERSION 1.0.0
     SYMBOLIC_NAME "hometec_service"
 )
