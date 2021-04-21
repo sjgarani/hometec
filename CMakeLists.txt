@@ -16,7 +16,7 @@ add_celix_container(hometec
         Celix::rsa_topology_manager
         Celix::rsa_dfi
         Celix::shell
-        Celix::shell_tui
+        Celix::remote_shell
         Celix::rsa_discovery
         hometec_service
     PROPERTIES

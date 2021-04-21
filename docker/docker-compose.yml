@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  node_1:
+    build: ./hometec
+    ports:
+    - "10000:9999"
+    - "6666:6666"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.3
+    command: bash -c "DISCOVERY_CFG_POLL_ENDPOINTS=http://10.5.0.4:9999/org.apache.celix.discovery.configured CELIX_BUNDLES_PATH=/opt/hometec/build/deploy/hometec/bundles /opt/hometec/build/deploy/hometec/hometec"
+  node_2:
+    build: ./lightec
+    ports:
+    - "9999:9999"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.4
+    command: bash -c "DISCOVERY_CFG_SERVER_IP=10.5.0.4 RSA_IP=10.5.0.4 CELIX_BUNDLES_PATH=/opt/lightec/build/deploy/lightec/bundles /opt/lightec/build/deploy/lightec/lightec"
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
