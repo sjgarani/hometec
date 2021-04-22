@@ -1,7 +1,7 @@
-FROM ubuntu:18.04 AS hometec
+FROM ubuntu:18.04 AS celix_dev
 
 RUN apt-get update && \
-    apt-get install -y redis wget libssl-dev vim && \
+    apt-get install -y redis wget libssl-dev vim telnet && \
     apt-get clean
 
 RUN apt-get install -yq --no-install-recommends \

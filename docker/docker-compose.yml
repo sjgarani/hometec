@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  node_1:
+  hometec:
     build: ./hometec
     ports:
     - "10000:9999"
@@ -9,7 +9,7 @@ services:
       vpcbr:
         ipv4_address: 10.5.0.3
     command: bash -c "DISCOVERY_CFG_POLL_ENDPOINTS=http://10.5.0.4:9999/org.apache.celix.discovery.configured CELIX_BUNDLES_PATH=/opt/hometec/build/deploy/hometec/bundles /opt/hometec/build/deploy/hometec/hometec"
-  node_2:
+  lightec:
     build: ./lightec
     ports:
     - "9999:9999"

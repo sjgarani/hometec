@@ -1,4 +1,4 @@
-FROM hometec/base
+FROM celix/base
 
 RUN git clone https://github.com/sjgarani/hometec.git && \
     cd hometec && \
