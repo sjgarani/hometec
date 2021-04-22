@@ -41,6 +41,13 @@ Dividido em dois projetos o experimento Hometec e Lightec, ambos usam o Projeto 
 `docker run --network=docker_vpcbr -it celix/base:latest telnet 10.5.0.3 6666`
 
 
+## Comando Hometec
+
+> turnOn # Configurar 255 no Estado do Led
+
+> turnOff # Configurar 0 no Estado do Led
+
+
 ## Links
 
 Github Celix: https://github.com/apache/celix
